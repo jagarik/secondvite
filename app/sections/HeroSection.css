@@ -1,0 +1,46 @@
+/* src/sections/HeroSection.css */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* フルスクリーン表示 */
+    /* background: url('/background.jpg') no-repeat center center/cover; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* 背景より前面に表示 */
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .store-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .store-button img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .hero-character {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 400px; /* サイズはお好みで調整 */
+    pointer-events: none;
+  }
+  

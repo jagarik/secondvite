@@ -1,0 +1,235 @@
+.character-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%; /* 幅を狭める */
+  margin: auto;
+  color: white;
+}
+
+.character-info {
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(98deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.02));
+  border-radius: 10px;
+  letter-spacing: 0;
+  word-spacing: 0;
+  width: 100%;
+  opacity: 1; /* 常に表示 */
+  transform: translateX(0); /* 初期位置を右に */
+  animation: none; /* 最初はアニメーションを無効に */
+}
+
+.character-card.enter .character-info {
+  animation: slide-in 0.5s ease-in-out forwards; /* enter状態でスライドインアニメーション */
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.character-info h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif; /* セリフ体に変更 */
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.character-info .cv {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.character-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #f4b400;
+  font-weight: bold;
+  font-family: 'Bodoni', serif; /* フォントをBodoniに変更 */
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.character-info h3::first-letter {
+  font-size: 2rem; /* 最初の文字を大きくする */
+}
+
+.character-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.image-heading-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.custom-heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 20px; /* 画像との間隔を調整 */
+  background: linear-gradient(100deg, #1a5dab, #00d4ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3); */
+  letter-spacing: 0;
+  word-spacing: 0;
+}
+
+.character-image img {
+  width: 900.5px;
+  height: 550.5px;
+  object-fit: cover; /* 必要に応じて調整してください */
+  border-radius: 20px;
+}
+
+.character-image {
+  position: relative;
+  /* animation: image-slide-in 1s ease-in-out; */
+}
+
+.character-card.enter .character-image {
+  animation: image-slide-in 0.5s ease-in-out;
+}
+
+@keyframes image-slide-in {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.story-text {
+  background: linear-gradient(120deg, #344c64, #344c64); /* 濃紺 */
+  color: #ffffff;            /* 白文字 */
+  padding: 16px;
+  border-radius: 8px;
+  line-height: 1.6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* story-textが下から上に表示されるアニメーション（enter状態） */
+.character-card.enter .story-text {
+  animation: story-slide-up 0.5s ease-in-out;
+}
+
+@keyframes story-slide-up {
+  from {
+    transform: translateY(30px); /* 下から30pxの位置から */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* character-nameが下から上に表示されるアニメーション（enter状態） */
+.character-card.enter .character-name {
+  animation: name-slide-up 0.5s ease-in-out;
+}
+
+@keyframes name-slide-up {
+  from {
+    transform: translateY(30px); /* 下から30pxの位置から */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* character-nameが上から下に消えるアニメーション（leave状態） */
+.character-card.leave .character-name {
+  animation: name-slide-down 0.5s ease-in-out;
+}
+
+@keyframes name-slide-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(30px); /* 上から下へ移動 */
+    opacity: 0;
+  }
+}
+
+/* story-textが上から下に消えるアニメーション（leave状態） */
+.character-card.leave .story-text {
+  animation: story-slide-down 0.5s ease-in-out;
+}
+
+@keyframes story-slide-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(30px); /* 上から下へ移動 */
+    opacity: 0;
+  }
+}
+
+.side-nav {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.side-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.side-nav-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.side-nav-item p {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.side-nav-item:hover {
+  transform: scale(1.1);
+}

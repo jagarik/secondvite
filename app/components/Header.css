@@ -1,0 +1,50 @@
+/* src/components/Header.css */
+.header {
+  background: url(https://act-webstatic.hoyoverse.com/puzzle/hk4e/pz_mDZ7Xhhdj3/resource/puzzle/2025/01/24/60b5083…_6402648985503015322.png?x-oss-process=image/format,webp/quality,Q_90) center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* nav 部分を flex: 1 にすることで利用可能な幅を確保 */
+.header__nav {
+  flex: 1;
+}
+
+/* ul 要素に対して均等配置 */
+.header__nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  /* 各 li 要素を均等に配置 */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header__nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header__nav ul li a:hover {
+  color: #ccc;
+}
+
+/* ログインボタンのスタイル */
+.header__auth .login-btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.header__auth .login-btn:hover {
+  background-color: #666;
+}

@@ -1,0 +1,72 @@
+.side-nav {
+  /* 高さを固定してスクロール可能に */
+  height: 300px;
+  overflow-y: auto;
+  /* 縦方向のスナップスクロールを有効に */
+  scroll-snap-type: y mandatory;
+  /* 任意でスクロールバーのスタイルも調整可能 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.side-nav-item {
+  /* 各アイテムが開始位置でスナップする */
+  scroll-snap-align: start;
+  /* アイテムの高さを指定（例: 100px） */
+  height: 100px;
+  /* その他のスタイル */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+
+.side-nav-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.side-nav-item p {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* 位置調整 */
+.prev {
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+.current {
+  transform: translateY(0);
+  opacity: 1;
+  font-size: 1.2rem;
+}
+
+.next {
+  transform: translateY(50%);
+  opacity: 0.7;
+}
+
+/* クリック時の効果 */
+.side-nav-item:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* 背景アニメーション */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
